@@ -13,13 +13,13 @@ flowchart TD
   B --> C[Create feature branch]
   C --> D[Work & local commits]
   D --> E[Push feature branch]
-  E --> F[Open PR / Merge Request]
+  E --> F[Open PR or Merge Request]
   F --> G[CI checks run]
   G --> H[Review & Approve]
-  H --> I[Merge to develop / main]
+  H --> I[Merge to develop or main]
   I --> J[Release tag & deploy]
   J --> K[Post-release hotfix (if needed)]
-  K --> L[Backmerge to main/develop]
+  K --> L[Backmerge to main or develop]
   ```
 
   # 2) Quick commands reference (setup & clone)
@@ -180,9 +180,9 @@ git reset --hard <commit_ID>
 
 ```mermaid
 flowchart TD
-  Push[Developer pushes PR] --> CI[CI: lint, unit tests]
+  Push[Developer pushes PR] --> CI[CI: lint unit tests]
   CI --> Build[Build artifact / container]
-  Build --> Scan[Security scan (SCA, SAST, container scan)]
+  Build --> Scan[Security scan (SCA SAST container scan)]
   Scan --> Publish[Publish artifact to registry]
   Publish --> CD[CD pipeline (deploy)]
   CD --> Prod[Production]
